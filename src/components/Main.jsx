@@ -32,7 +32,7 @@ const Main = () => {
           </h1>
           <div className="my-[25px]">
             <button className="border border-[#d4d4d4] bg-[#d4d4d4] text-[#000] py-[8px] px-[16px]">
-            <i class="fa-solid fa-play mr-[8px]"></i>Play
+            <i className="fa-solid fa-play mr-[8px]"></i>Play
             </button>
             <button className="border border-[#d4d4d4] text-[#fff] py-[8px] px-[20px] ml-[16px]">
               Watch Later
