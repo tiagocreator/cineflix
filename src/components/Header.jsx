@@ -1,7 +1,7 @@
 const Header = () => {
   return (
-    <header className="w-full flex items-center justify-between py-[6px] px-[16px] md:px-[32px] z-[100]">
-      <h1 className="text-red-600 text-[2.4rem] font-bold cursor-pointer bg-[#000]">
+    <header className="w-full flex items-center justify-between py-[5px] px-[16px] md:px-[32px] z-[100]">
+      <h1 className="text-red-600 text-[2.3rem] font-bold cursor-pointer bg-[#000]">
         CINEFLIX
       </h1>
       <nav className="text-[1rem]">
