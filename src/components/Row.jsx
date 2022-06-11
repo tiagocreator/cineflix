@@ -36,7 +36,7 @@ const Row = ({ title, fetchURL, id }) => {
         <div className="absolute left-0 w-[25px] sm:w-[30px] md:w-[40px] lg:w-[50px] z-10 bg-gradient-to-r from-[#000] opacity-50 h-[96.92px] sm:h-[119.41px] md:h-[141.88px] lg:h-[164.36px]"></div>
         <div
           id={'slider' + id}
-          className="w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scroll scrollbar-hide"
+          className="w-full h-full overflow-x-scroll overflow-y-hidden whitespace-nowrap scroll-smooth scroll scrollbar-hide"
         >
           {movies.map((item, id) => (
             <Movie key={id} item={item} />
