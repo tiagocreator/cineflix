@@ -6,7 +6,7 @@ const Footer = () => {
         <p>Data taken from the TMDB api</p>
       </div>
     </footer>
-  )
+  );
 };
 
 export default Footer;
