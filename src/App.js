@@ -12,16 +12,16 @@ import Account from './pages/Account';
 function App() {
   return (
     <>
-    <AuthProvider>
-      <Header />
-      <Routes>
-        <Route path="" element={<Home />} />
-        <Route path="/login" element={<LogIn/>} />
-        <Route path="/signup" element={<SignUp/>} />
-        <Route path="/account" element={<Account/>} />
-      </Routes>
-      <Footer />
-    </AuthProvider>
+      <AuthProvider>
+        <Header />
+        <Routes>
+          <Route path="" element={<Home />} />
+          <Route path="/login" element={<LogIn />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/account" element={<Account />} />
+        </Routes>
+        <Footer />
+      </AuthProvider>
     </>
   );
 }
