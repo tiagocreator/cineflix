@@ -9,32 +9,36 @@ import {
 
 const Auth = createContext();
 
-export function AuthProvider({ children }) {
+export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState({});
 
-  function signUp(email, password) {
+  const SignUp = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
-  }
+  };
 
-  function logIn(email, password) {
+  const LogIn = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
-  }
+  };
 
-  function logOut() {
+  const LogOut = () => {
     return signOut(auth);
-  }
+  };
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser)
+      setUser(currentUser);
     });
 
-    return(unsubscribe)
-  })
+    return unsubscribe;
+  });
 
-  return <Auth.Provider value={{ signUp, logIn, logOut, user }}>{children}</Auth.Provider>;
-}
+  return (
+    <Auth.Provider value={{ SignUp, LogIn, LogOut, user }}>
+      {children}
+    </Auth.Provider>
+  );
+};
 
-export function UserAuth() {
+export const UserAuth = () => {
   return useContext(Auth);
-}
+};
