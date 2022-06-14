@@ -34,7 +34,7 @@ const SignUp = () => {
           <div className="max-w-[320px] mx-auto py-[45px]">
             <h1 className="text-[1.8rem] font-bold">Sign Up</h1>
             {error ? (
-              <p className="bg-red-400 py-[8px] px-[10px] rounded">
+              <p className="bg-red-400 py-[6px] px-[10px] rounded">
                 {error.split('Firebase: ')}
               </p>
             ) : null}
