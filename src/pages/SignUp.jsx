@@ -50,6 +50,7 @@ const SignUp = () => {
                 type="email"
                 placeholder="Email"
                 autoComplete="email"
+                required
               />
               <input
                 onChange={(e) => {
@@ -59,12 +60,7 @@ const SignUp = () => {
                 type="password"
                 placeholder="Password"
                 autoComplete="current-password"
-              />
-              <input
-                className="p-[12px] my-[8px] bg-gray-800 rounded outline-none"
-                type="password"
-                placeholder="Repeat Password"
-                autoComplete="current-password"
+                required
               />
               <button className="bg-red-600 py-[12px] my-[25px] rounded font-bold">
                 Sign Up
