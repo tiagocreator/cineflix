@@ -6,18 +6,16 @@ import { useState } from 'react';
 const SignUp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
   const { user, SignUp } = UserAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError('');
     try {
       await SignUp(email, password);
       navigate('/');
     } catch (error) {
-      setError(error.message);
+      console.log(error);
     }
   };
 
@@ -33,11 +31,6 @@ const SignUp = () => {
         <div className="max-w-[450px] h-auto mx-auto bg-black/80 text-[#fff] ">
           <div className="max-w-[320px] mx-auto py-[45px]">
             <h1 className="text-[1.8rem] font-bold">Sign Up</h1>
-            {error ? (
-              <p className="bg-red-400 py-[6px] px-[10px] rounded">
-                {error.split('Firebase: ')}
-              </p>
-            ) : null}
             <form
               onSubmit={handleSubmit}
               className="w-full flex flex-col py-[16px]"
