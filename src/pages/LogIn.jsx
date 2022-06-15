@@ -21,6 +21,20 @@ const LogIn = () => {
     }
   };
 
+  const handleError = () => {
+    return error ? (
+      <p className="bg-red-400 py-[6px] px-[10px] rounded">
+        {
+          error.includes('too-many-requests') ? 'Access to this account has been temporarily disabled due to many failed login attempts. You can try again later'
+          : error.includes('user-not-found') ? 'User not found'
+          : error.includes('invalid-email') ? 'Incorrect email adress' 
+          : error.includes('wrong-password') ? 'Incorrect password' 
+          : 'Invalid email adress or password'
+        }
+      </p>
+    ) : null
+  }
+
   return (
     <div className="flex justify-center items-center w-full h-screen text-[#fff]">
       <img
@@ -33,11 +47,7 @@ const LogIn = () => {
         <div className="max-w-[450px] h-[450px] mx-auto bg-black/80 text-[#fff] ">
           <div className="max-w-[320px] mx-auto py-[45px]">
             <h1 className="text-[1.8rem] font-bold">Sign In</h1>
-            {error ? (
-              <p className="bg-red-400 py-[6px] px-[10px] rounded">
-                {error.split('Firebase: ')}
-              </p>
-            ) : null}
+              {handleError()}
             <form
               onSubmit={handleSubmit}
               className="w-full flex flex-col py-[16px]"
