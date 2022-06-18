@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Requests from '../Requests';
+import { FaPlay } from 'react-icons/fa';
 
 const Intro = () => {
   const [movies, setMovies] = useState([]);
@@ -30,9 +31,9 @@ const Intro = () => {
           <h1 className="text-[1.8rem] md:text-[3rem] font-bold">
             {randomMovie?.title}
           </h1>
-          <div className="my-[25px]">
-            <button className="border border-[#d4d4d4] bg-[#d4d4d4] text-[#000] py-[8px] px-[16px]">
-              <i className="fa-solid fa-play mr-[8px]"></i>Play
+          <div className="flex my-[25px]">
+            <button className="flex justify-center items-center border border-[#d4d4d4] bg-[#d4d4d4] text-[#000] py-[8px] px-[16px]">
+              <FaPlay className="mr-[5px]" /> <span>Play</span>
             </button>
             <button className="border border-[#d4d4d4] text-[#fff] py-[8px] px-[20px] ml-[16px]">
               Watch Later
