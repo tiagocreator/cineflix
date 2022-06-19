@@ -23,7 +23,7 @@ const Intro = () => {
       <div className="w-full h-full">
         <div className="w-full h-[550px] bg-gradient-to-r from-[#000] absolute"></div>
         <img
-          src={`https://image.tmdb.org/t/p/original/${randomMovie?.backdrop_path}`}
+          src={`https://image.tmdb.org/t/p/w1280/${randomMovie?.backdrop_path}`}
           alt={randomMovie?.title}
           className="w-full h-full object-cover"
         />

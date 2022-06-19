@@ -31,7 +31,7 @@ const Movie = ({ item }) => {
     <div className="w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative hover:scale-105 mx-[10px] first:ml-[0] last:mr-[0]">
       <img
         className="w-full h-auto block"
-        src={`https://image.tmdb.org/t/p/w500/${item?.backdrop_path}`}
+        src={`https://image.tmdb.org/t/p/w300/${item?.backdrop_path}`}
         alt={item?.title}
       />
       <div className="absolute top-0 left-0 h-full w-full hover:bg-black/75 opacity-0 hover:opacity-100 text-[#fff]">
