@@ -35,7 +35,7 @@ const Intro = () => {
             <button className="flex justify-center items-center border border-[#d4d4d4] bg-[#d4d4d4] text-[#000] py-[8px] px-[16px]">
               <FaPlay className="mr-[5px]" /> <span>Play</span>
             </button>
-            <button className="border border-[#d4d4d4] text-[#fff] py-[8px] px-[20px] ml-[16px]">
+            <button className="border hover:bg-[#2D2D2D] active:bg-[#2D2D2D] border-[#d4d4d4] text-[#fff] py-[8px] px-[20px] ml-[16px]">
               Watch Later
             </button>
           </div>
