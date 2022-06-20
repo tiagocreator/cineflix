@@ -1,10 +1,10 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { UserAuth } from '../context/Auth';
+import Logo from '../assets/img/cineflix-logo.jpg';
 
 const Header = () => {
   const { user, LogOut } = UserAuth();
   const navigate = useNavigate();
-
   const handleLogOut = async () => {
     try {
       await LogOut();
@@ -15,11 +15,9 @@ const Header = () => {
   };
 
   return (
-    <header className="w-full flex items-center justify-between py-[5px] px-[16px] md:px-[32px] z-[100]">
+    <header className="w-full flex items-center justify-between py-[5px] px-[16px] md:px-[32px] z-[100] h-[70px]">
       <Link to="/">
-        <h1 className="text-red-600 text-[2.3rem] font-bold cursor-pointer bg-[#000]">
-          CINEFLIX
-        </h1>
+        <img className="h-[45px] md:h-[55px]" src={Logo} alt="cineflix logo" />
       </Link>
       {user?.email ? (
         <nav className="text-[1rem]">
