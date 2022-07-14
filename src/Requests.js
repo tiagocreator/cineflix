@@ -9,7 +9,6 @@ const requests = {
   reqAdventure: `https://api.themoviedb.org/3/discover/movie?api_key=${key}&language=en-US&include_adult=true&include_video=false&page=1&with_genres=12`,
   reqComedy: `https://api.themoviedb.org/3/discover/movie?api_key=${key}&language=en-US&include_adult=true&include_video=false&page=1&with_genres=35`,
   reqHorror: `https://api.themoviedb.org/3/discover/movie?api_key=${key}&language=en-US&include_adult=true&include_video=false&page=1&with_genres=27`,
-  reqRomance: `https://api.themoviedb.org/3/discover/movie?api_key=${key}&language=en-US&include_adult=true&include_video=false&page=1&with_genres=10749`,
   reqDocumentary: `https://api.themoviedb.org/3/discover/movie?api_key=${key}&language=en-US&include_adult=true&include_video=false&page=1&with_genres=99`,
 };
 

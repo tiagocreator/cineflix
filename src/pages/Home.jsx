@@ -19,7 +19,6 @@ const Home = () => {
           />
           <Row id="comedy" title="Comedy" fetchURL={Requests.reqComedy} />
           <Row id="horror" title="Horror" fetchURL={Requests.reqHorror} />
-          <Row id="romance" title="Romance" fetchURL={Requests.reqRomance} />
           <Row
             id="documentary"
             title="Documentary"
