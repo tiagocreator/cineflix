@@ -15,33 +15,33 @@ const Header = () => {
   };
 
   return (
-    <header className="w-full flex items-center justify-between py-[5px] px-[16px] md:px-[32px] z-[100] h-[70px]">
+    <header className="w-full flex items-center justify-between py-1.5 px-4 md:px-8 z-[100] h-16">
       <Link to="/">
-        <img className="h-[40px] md:h-[53px]" src={Logo} alt="cineflix logo" />
+        <img className="h-10 md:h-11" src={Logo} alt="cineflix logo" />
       </Link>
       {user?.email ? (
-        <nav className="text-[1rem]">
+        <nav className="text-base">
           <Link to="/account">
-            <button className="border hover:bg-[#2D2D2D] active:bg-[#2D2D2D] border-[#d4d4d4] text-[#fff] py-[3px] md:py-[7px]  px-[10px] md:px-[18px]">
+            <button className="border hover:bg-theme-darkgray focus:bg-theme-darkgray border-theme-lightgray py-1 md:py-1.5 px-2.5 md:px-5">
               Account
             </button>
           </Link>
           <button
             onClick={handleLogOut}
-            className="bg-red-600 active:bg-red-700 py-[4px] md:py-[8px] px-[10px] md:px-[18px] cursor-pointer font-bold text-[#fff] ml-[11px] md:ml-[25px]"
+            className="bg-theme-red hover:bg-theme-darkred focus:bg-theme-darkred py-1 md:py-1.5 px-2.5 md:px-4 font-bold ml-2.5 md:ml-6 border border-theme-red hover:border-theme-darkred focus:border-theme-darkred"
           >
             Sign Out
           </button>
         </nav>
       ) : (
-        <nav className="text-[1rem]">
+        <nav className="text-base">
           <Link to="/login">
-            <button className="border hover:bg-[#2D2D2D] active:bg-[#2D2D2D] border-[#d4d4d4] text-[#fff] py-[3px] md:py-[7px]  px-[10px] md:px-[18px]">
+            <button className="border hover:bg-theme-darkgray focus:bg-theme-darkgray border-theme-lightgray py-1 md:py-1.5 px-2.5 md:px-5">
               Sign In
             </button>
           </Link>
           <Link to="/signup">
-            <button className="bg-red-600 active:bg-red-700 py-[4px] md:py-[8px] px-[10px] md:px-[18px] cursor-pointer font-bold text-[white] ml-[11px] md:ml-[25px]">
+            <button className="bg-theme-red hover:bg-theme-darkred focus:bg-theme-darkred py-1 md:py-1.5 px-2.5 md:px-4 font-bold ml-2.5 md:ml-6 border border-theme-red hover:border-theme-darkred focus:border-theme-darkred">
               Join Now
             </button>
           </Link>
