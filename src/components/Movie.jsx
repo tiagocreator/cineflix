@@ -5,12 +5,13 @@ import { db } from '../firebase';
 import { arrayUnion, doc, updateDoc } from 'firebase/firestore';
 
 const Movie = ({ item }) => {
-  
   const [like, setLike] = useState(false);
   const [saved, setSaved] = useState(false);
   const { user } = UserAuth();
-  
-  const heartStyle = `absolute top-4 right-4 ${like ? 'text-theme-red' : 'text-white'} text-xl`
+
+  const heartStyle = `absolute top-4 right-4 ${
+    like ? 'text-theme-red' : 'text-white'
+  } text-xl`;
   const movieId = doc(db, 'users', `${user?.email}`);
 
   const saveShow = async () => {
@@ -36,7 +37,7 @@ const Movie = ({ item }) => {
         src={`https://image.tmdb.org/t/p/w300/${item?.backdrop_path}`}
         alt={item?.title}
       />
-      <div className="absolute top-0 left-0 h-full w-full hover:bg-black/75 opacity-0 hover:opacity-100">
+      <div className="absolute top-0 left-0 h-full w-full hover:bg-theme-background-70 opacity-0 hover:opacity-100">
         <p className="whitespace-normal text-xs md:text-sm font-bold flex justify-center items-center h-full text-center mx-[20%]">
           {item.title}
         </p>
