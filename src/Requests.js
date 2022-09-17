@@ -1,4 +1,4 @@
-import { tmdbAccessKey as key } from './personalKeys';
+import { tmdbAccessKey as key } from './accessKeys';
 
 const requests = {
   reqPopular: `https://api.themoviedb.org/3/movie/popular?api_key=${key}&language=en-US&page=1`,

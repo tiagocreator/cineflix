@@ -1,7 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
-import { firebaseConfigKeys as key } from './personalKeys';
+import { firebaseConfigKeys as key } from './accessKeys';
 
 const firebaseConfig = {
   apiKey: key.apiKey,
