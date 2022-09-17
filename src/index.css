@@ -6,4 +6,9 @@ body {
   background: #010001;
   margin: 0;
   font-family: 'Lato', sans-serif;
+  color: #fff;
+}
+
+button {
+  cursor: pointer;
 }
