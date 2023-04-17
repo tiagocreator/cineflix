@@ -12,9 +12,9 @@ const Auth = createContext();
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState({});
 
-  const SignUp = (email, password) => {
+  const SignUp = async (email, password) => {
     createUserWithEmailAndPassword(auth, email, password);
-    setDoc(doc(db, 'users', email), {
+    await setDoc(doc(db, 'users', email), {
       savedShows: [],
     });
   };
@@ -32,14 +32,12 @@ export const AuthProvider = ({ children }) => {
       setUser(currentUser);
     });
 
-    return unsubscribe;
+    return () => {
+      unsubscribe();
+    };
   });
 
-  return (
-    <Auth.Provider value={{ SignUp, LogIn, LogOut, user }}>
-      {children}
-    </Auth.Provider>
-  );
+  return <Auth.Provider value={{ SignUp, LogIn, LogOut, user }}>{children}</Auth.Provider>;
 };
 
 export const UserAuth = () => {
