@@ -9,6 +9,7 @@ const firebaseConfig = {
   projectId: key.projectId,
   storageBucket: key.storageBucket,
   messagingSenderId: key.messagingSenderId,
+  appId: key.appId,
 };
 
 export const app = initializeApp(firebaseConfig);
