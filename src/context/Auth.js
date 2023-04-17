@@ -24,6 +24,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const LogOut = () => {
+    window.location.reload(false);
     return signOut(auth);
   };
 
