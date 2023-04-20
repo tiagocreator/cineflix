@@ -1,13 +1,17 @@
 import { useState, useEffect } from 'react';
-import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
+
 import { UserAuth } from '../context/Auth';
 import { db } from '../firebase';
 import { onSnapshot, doc, updateDoc } from 'firebase/firestore';
+
+import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 import { FaTimes } from 'react-icons/fa';
+import { useToast } from '../utils/useToast';
 
 const SavedShows = () => {
   const { user } = UserAuth();
   const [movies, setMovies] = useState([]);
+  const toast = useToast();
 
   const slideLeft = () => {
     var slider = document.querySelector('#slider');
@@ -26,8 +30,9 @@ const SavedShows = () => {
       await updateDoc(movieRef, {
         savedShows: res,
       });
-    } catch (error) {
-      console.log(error);
+      toast.open('Show removed from your list.');
+    } catch (e) {
+      toast.open('Error, try again later.');
     }
   };
 
