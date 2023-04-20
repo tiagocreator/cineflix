@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import { AuthProvider } from './context/Auth';
+import { ToastProvider } from './context/ToastProvider';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -14,24 +15,26 @@ import ProtectedRoute from './components/ProtectedRoute';
 function App() {
   return (
     <>
-      <AuthProvider>
-        <Header />
-        <Routes>
-          <Route path="" element={<Home />} />
-          <Route path="/login" element={<LogIn />} />
-          <Route path="/signup" element={<SignUp />} />
+      <ToastProvider>
+        <AuthProvider>
+          <Header />
+          <Routes>
+            <Route path='' element={<Home />} />
+            <Route path='/login' element={<LogIn />} />
+            <Route path='/signup' element={<SignUp />} />
 
-          <Route
-            path="/account"
-            element={
-              <ProtectedRoute>
-                <Account />
-              </ProtectedRoute>
-            }
-          />
-        </Routes>
-        <Footer />
-      </AuthProvider>
+            <Route
+              path='/account'
+              element={
+                <ProtectedRoute>
+                  <Account />
+                </ProtectedRoute>
+              }
+            />
+          </Routes>
+          <Footer />
+        </AuthProvider>
+      </ToastProvider>
     </>
   );
 }
