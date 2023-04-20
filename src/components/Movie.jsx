@@ -3,11 +3,13 @@ import { useState } from 'react';
 import { UserAuth } from '../context/Auth';
 import { db } from '../firebase';
 import { arrayUnion, doc, onSnapshot, updateDoc } from 'firebase/firestore';
+import { useToast } from '../utils/toastIndex';
 
 const Movie = ({ item }) => {
   const [like, setLike] = useState(null);
   const [saved, setSaved] = useState(false);
   const { user } = UserAuth();
+  const toast = useToast();
 
   const heartStyle = `absolute top-4 right-4 ${like ? 'text-theme-red' : 'text-white'} text-xl`;
   const movieId = doc(db, 'users', `${user?.email}`);
@@ -26,7 +28,7 @@ const Movie = ({ item }) => {
   const saveShow = async () => {
     if (user?.email) {
       if (like) {
-        alert('Show is already on your list');
+        toast.open('Show is already on your list');
       } else {
         setSaved(true);
         await updateDoc(movieId, {
@@ -37,10 +39,11 @@ const Movie = ({ item }) => {
             favorites: true,
           }),
         });
+        toast.open('Show saved to your list');
         getSavedShows();
       }
     } else {
-      alert('You need to sign in to save a movie');
+      toast.open('You need to sign in to save a movie');
     }
   };
 
