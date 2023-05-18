@@ -8,7 +8,8 @@ const requests = {
   reqAdventure: `https://api.themoviedb.org/3/discover/movie?api_key=${key}&language=en-US&include_adult=false&include_video=false&page=1&with_genres=12`,
   reqComedy: `https://api.themoviedb.org/3/discover/movie?api_key=${key}&language=en-US&include_adult=false&include_video=false&page=1&with_genres=35`,
   reqHorror: `https://api.themoviedb.org/3/discover/movie?api_key=${key}&language=en-US&include_adult=false&include_video=false&page=1&with_genres=27`,
-  reqDocumentary: `https://api.themoviedb.org/3/discover/movie?api_key=${key}&language=en-US&include_adult=false&include_video=false&page=1&with_genres=99`,
+
+  categories: `https://api.themoviedb.org/3/genre/movie/list?api_key=${key}&language=en-US`,
 };
 
 export default requests;
